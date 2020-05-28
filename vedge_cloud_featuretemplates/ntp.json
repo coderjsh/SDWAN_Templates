@@ -1,7 +1,7 @@
 {
    "factoryDefault" : false,
    "templateMinVersion" : "15.0.0",
-   "templateName" : "API_NTP",
+   "templateName" : "API_NTP_2",
    "templateDefinition" : {
       "server" : {
          "vipPrimaryKey" : [
@@ -17,9 +17,9 @@
                },
                "prefer" : {
                   "vipVariableName" : "ntp_server_prefer",
-                  "vipType" : "ignore",
+                  "vipType" : "constant",
                   "vipObjectType" : "object",
-                  "vipValue" : "false"
+                  "vipValue" : "true"
                },
                "priority-order" : [
                   "name",
@@ -37,19 +37,21 @@
                },
                "key" : {
                   "vipVariableName" : "ntp_server_server_auth_key",
-                  "vipType" : "ignore",
+                  "vipType" : "variableName",
+                  "vipValue": "",
                   "vipObjectType" : "object"
                },
                "name" : {
-                  "vipType" : "variableName",
+                  "vipType" : "constant",
                   "vipObjectType" : "object",
-                  "vipValue" : "",
+                  "vipValue" : "1.1.1.1/32",
                   "vipVariableName" : "ntp_server_host"
                },
                "source-interface" : {
                   "vipObjectType" : "object",
-                  "vipType" : "ignore",
-                  "vipVariableName" : "ntp_server_source_interface"
+                  "vipType" : "constant",
+                  "vipValue": "true",
+                  "vipVariableName" : "ntp_server_prefer"
                }
             }
          ],
@@ -69,15 +71,15 @@
                {
                   "number" : {
                      "vipVariableName" : "ntp_auth_auth_key",
-                     "vipType" : "variableName",
+                     "vipType" : "constant",
                      "vipObjectType" : "object",
-                     "vipValue" : ""
+                     "vipValue" : 2
                   },
                   "md5" : {
                      "vipVariableName" : "ntp_auth_md5",
-                     "vipType" : "variableName",
+                     "vipType" : "constant",
                      "vipObjectType" : "object",
-                     "vipValue" : ""
+                     "vipValue" : "cisco"
                   },
                   "priority-order" : [
                      "number",
@@ -92,9 +94,7 @@
       }
    },
    "templateType" : "ntp",
-   "devicesAttached" : 0,
    "templateDescription" : "API_NTP",
-   "createdBy" : "admin",
    "deviceType" : [
       "vedge-cloud"
    ],

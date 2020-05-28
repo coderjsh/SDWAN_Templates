@@ -39,11 +39,6 @@
             "vipValue" : [
                {
                   "vipOptional" : false,
-                  "group" : {
-                     "vipValue" : [],
-                     "vipType" : "constant",
-                     "vipObjectType" : "list"
-                  },
                   "priority-order" : [
                      "name",
                      "password",
@@ -55,17 +50,69 @@
                      "vipObjectType" : "object",
                      "vipVariableName" : "user_name_0",
                      "vipType" : "constant",
-                     "vipValue" : "admin"
+                     "vipValue" : "sdwan_admin"
                   },
                   "password" : {
                      "vipObjectType" : "object",
-                     "vipValue" : "$6$smKFGQ==$dXAo43/XDQPJfVB1Gy.1RHrpaueNJKByQuRT/82zBj1eFQNZg1UpNAWRyzltyssDeIO/lR.rX6ATLFDVKY9jB/",
+                     "vipValue" : "admin",
                      "vipType" : "constant"
                   },
                   "description" : {
                      "vipObjectType" : "object",
-                     "vipType" : "ignore",
-                     "vipValue" : ""
+                     "vipType" : "constant",
+                     "vipValue" : "test",
+                     "vipVariableName": "user_description"
+                  },
+                  "group": {
+                     "vipType": "constant",
+                     "vipValue": [
+                        {
+                           "vipType": "constant",
+                           "vipValue": "netadmin",
+                           "vipObjectType": "object"
+                        }
+                     ],
+                     "vipObjectType": "list",
+                     "vipVariableName": "user_group"
+                  }
+               },
+               {
+                  "vipOptional" : false,
+                  "priority-order" : [
+                     "name",
+                     "password",
+                     "secret",
+                     "description",
+                     "group"
+                  ],
+                  "name" : {
+                     "vipObjectType" : "object",
+                     "vipVariableName" : "user_name_0",
+                     "vipType" : "constant",
+                     "vipValue" : "testing_admin"
+                  },
+                  "password" : {
+                     "vipObjectType" : "object",
+                     "vipValue" : "admin",
+                     "vipType" : "constant"
+                  },
+                  "description" : {
+                     "vipObjectType" : "object",
+                     "vipType" : "constant",
+                     "vipValue" : "test2",
+                     "vipVariableName": "user_description"
+                  },
+                  "group": {
+                     "vipType": "constant",
+                     "vipValue": [
+                        {
+                           "vipType": "constant",
+                           "vipValue": "operator",
+                           "vipObjectType": "object"
+                        }
+                     ],
+                     "vipObjectType": "list",
+                     "vipVariableName": "user_group"
                   }
                }
             ]
@@ -318,9 +365,9 @@
          },
          "logs" : {
             "netconf-disable" : {
-               "vipValue" : "false",
-               "vipType" : "ignore",
-               "vipVariableName" : "disable_netconf_logs",
+               "vipValue" : "",
+               "vipType" : "variableName",
+               "vipVariableName" : "i_am_testing",
                "vipObjectType" : "object"
             },
             "audit-disable" : {
@@ -331,18 +378,18 @@
             }
          },
          "radius-servers" : {
-            "vipType" : "ignore",
+            "vipType" : "constant",
             "vipValue" : [
-               ""
+               "1.1.1.1/32"
             ],
             "vipVariableName" : "radius_servers",
             "vipObjectType" : "list"
          },
          "admin-auth-order" : {
-            "vipValue" : "false",
-            "vipType" : "ignore",
-            "vipVariableName" : "admin_auth_order",
-            "vipObjectType" : "object"
+            "vipValue" : "true",
+            "vipObjectType": "object",
+            "vipType": "constant",
+            "vipVariableName" : "admin_auth_order"
          },
          "auth-fallback" : {
             "vipObjectType" : "object",
@@ -356,8 +403,8 @@
       "vedge-cloud"
    ],
    "templateMinVersion" : "15.0.0",
-   "templateName" : "API_AAA",
+   "templateName" : "TEST_API_AAA_",
    "configType" : "xml",
-   "templateDescription" : "API_AAA",
+   "templateDescription" : "TEST_API_AAA_2",
    "factoryDefault" : false
 }
